@@ -8,6 +8,12 @@ loopviz(..., animate = FALSE, delay = NULL, loop = TRUE)
 }
 \arguments{
 \item{...}{A vector of integers}
+
+\item{animate}{Whether or not to animate the for loop, not working...}
+
+\item{delay}{Delay between frames, to be used when animating for loops}
+
+\item{loop}{If TRUE, continue looping the animation}
 }
 \description{
 Simply pass a vector of integers. The first integer represents

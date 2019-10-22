@@ -1,5 +1,5 @@
 Package: loopviz
-Title: Visualize Nested For Loops.
+Title: Visualize Nested For Loops
 Version: 0.1.0
 Authors@R: 
     person(given = "Tyler",

@@ -1,5 +1,5 @@
 initialize_plot <- function() {
-  plot(
+  graphics::plot(
     x = c(-1, 1),
     y = c(-1, 1),
     type = "n",
@@ -16,16 +16,16 @@ plot_circles <- function(i, x) {
     radius <- x$radii[i]
     theta <- seq(0, 2 * pi, length = 200)
     x_position <- ifelse(x$radii[i] == 1, 0, 1 - radius)
-    lines(x = radius * cos(theta) + x_position, y = radius * sin(theta))
+    graphics::lines(x = radius * cos(theta) + x_position, y = radius * sin(theta))
   }
 }
 
 parse_title <- function(i) {
   switch (as.character(length(i)),
-    "0" = title("0 Nested Loops"),
-    "1" = title("0 Nested Loops"),
-    "2" = title(paste(length(i) - 1, "Nested Loop")),
-    title(paste(length(i) - 1, "Nested Loops"))
+    "0" = graphics::title("0 Nested Loops"),
+    "1" = graphics::title("0 Nested Loops"),
+    "2" = graphics::title(paste(length(i) - 1, "Nested Loop")),
+    graphics::title(paste(length(i) - 1, "Nested Loops"))
   )
 }
 
@@ -64,11 +64,11 @@ animate <- function(x, delay = 0.1, loop = FALSE) {
   graphics::par(ask = FALSE)
   for(i in 1:nrow(path)) {
     initialize_plot()
-    lines(x = path$x, y = path$y)
-    points(x = path$x[i], y = path$y[i])
+    graphics::lines(x = path$x, y = path$y)
+    graphics::points(x = path$x[i], y = path$y[i])
     parse_title(x[["circle"]])
   }
-  dev.off()
+  grDevices::dev.off()
   png_files <- sprintf("frame%03d.png", 1:nrow(path))
   gif_file <- gifski::gifski(png_files, delay = delay, loop = loop)
   unlink(png_files)
@@ -83,6 +83,9 @@ animate <- function(x, delay = 0.1, loop = FALSE) {
 #' nested loop which iterates twice.
 #'
 #' @param ... A vector of integers
+#' @param animate Whether or not to animate the for loop, not working...
+#' @param delay Delay between frames, to be used when animating for loops
+#' @param loop If TRUE, continue looping the animation
 #' @export
 loopviz <- function(..., animate = FALSE, delay = NULL, loop = TRUE) {
   i <- list(...)
