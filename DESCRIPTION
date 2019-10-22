@@ -1,0 +1,16 @@
+Package: loopviz
+Title: Visualize Nested For Loops.
+Version: 0.1.0
+Authors@R: 
+    person(given = "Tyler",
+           family = "Littlefield",
+           role = c("aut", "cre"),
+           email = "tylurp1@gmail.com",
+           comment = c(ORCID = "0000-0002-6020-1125"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    gifski
