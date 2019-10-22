@@ -14,3 +14,5 @@ LazyData: true
 RoxygenNote: 6.1.1
 Imports: 
     gifski
+URL: https://github.com/tyluRp/loopviz
+BugReports: https://github.com/tyluRp/loopviz/issues
