@@ -12,6 +12,15 @@ Recursion*](https://www.youtube.com/watch?v=HXNhEYqFo0o) a youtube video
 by
 [Computerphile](https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA).
 
+## Installation
+
+You can install `loopviz` from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("tylurp/loopviz")
+```
+
 ## Example
 
 To plot a nested for loop, provide some numbers to `loopviz`. Each
