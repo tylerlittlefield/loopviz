@@ -4,7 +4,8 @@
 \alias{loopviz}
 \title{Visualize Nested Loops}
 \usage{
-loopviz(..., animate = FALSE, delay = NULL, loop = TRUE)
+loopviz(..., animate = FALSE, delay = NULL, loop = TRUE,
+  translate = FALSE)
 }
 \arguments{
 \item{...}{A vector of integers}
@@ -14,6 +15,8 @@ loopviz(..., animate = FALSE, delay = NULL, loop = TRUE)
 \item{delay}{Delay between frames, to be used when animating for loops}
 
 \item{loop}{If TRUE, continue looping the animation}
+
+\item{translate}{If TRUE, translates the visual to valid, runnable code}
 }
 \description{
 Simply pass a vector of integers. The first integer represents

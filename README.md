@@ -12,15 +12,6 @@ Recursion*](https://www.youtube.com/watch?v=HXNhEYqFo0o) a youtube video
 by
 [Computerphile](https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA).
 
-## Installation
-
-You can install the released version of loopviz from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("loopviz")
-```
-
 ## Example
 
 To plot a nested for loop, provide some numbers to `loopviz`. Each
@@ -51,4 +42,14 @@ for (i in 1:2) {
 #> [1] 1
 #> [1] 2
 #> [1] 3
+```
+
+You can let loopviz do the translating with `translate = TRUE`:
+
+``` r
+loopviz(2, 3, translate = TRUE)
+#> for (i in 1:2) {
+#>   for (j in 1:3)
+#>     print (j)
+#> }
 ```

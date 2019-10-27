@@ -21,14 +21,6 @@ knitr::opts_chunk$set(
 
 Visualize nested for loops. Inspiration from [_Programming Loops vs Recursion_](https://www.youtube.com/watch?v=HXNhEYqFo0o) a youtube video by [Computerphile](https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA).
 
-## Installation
-
-You can install the released version of loopviz from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("loopviz")
-```
-
 ## Example
 
 To plot a nested for loop, provide some numbers to `loopviz`. Each number represents the number of iterations. The order represents the hierarchy, i.e. the first number is the top level loop, the second is the first nested loop and so on. For example:
@@ -47,3 +39,10 @@ for (i in 1:2) {
     print (j)
 }
 ```
+
+You can let loopviz do the translating with `translate = TRUE`:
+
+```{r, fig.show = 'hide'}
+loopviz(2, 3, translate = TRUE)
+```
+

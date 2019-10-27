@@ -75,6 +75,23 @@ animate <- function(x, delay = 0.1, loop = FALSE) {
   utils::browseURL(gif_file)
 }
 
+translate_loop <- function(x) {
+  letters <- letters[9:26]
+  for (i in seq_along(x)) {
+    if (i == 1 & i != max(seq_along(x))) {
+      statement <- paste0("for (", letters[i], " in 1:", x[i], ") {\n")
+    } else if (i != max(seq_along(x))) {
+      t <- paste0(rep("  ", i - 1), collapse = "")
+      statement <- paste0(t, "for (", letters[i], " in 1:", x[i], ")\n")
+    } else {
+      t <- paste0(rep("  ", i - 1), collapse = "")
+      t2 <- paste0(rep("  ", i), collapse = "")
+      statement <- paste0(t, "for (", letters[i], " in 1:", x[i], ")\n", t2, "print (", letters[i], ")\n}")
+    }
+    cat(statement)
+  }
+}
+
 #' Visualize Nested Loops
 #' @description Simply pass a vector of integers. The first integer represents
 #' the number of iterations for the top level loop. The second integer
@@ -86,10 +103,14 @@ animate <- function(x, delay = 0.1, loop = FALSE) {
 #' @param animate Whether or not to animate the for loop, not working...
 #' @param delay Delay between frames, to be used when animating for loops
 #' @param loop If TRUE, continue looping the animation
+#' @param translate If TRUE, translates the visual to valid, runnable code
 #' @export
-loopviz <- function(..., animate = FALSE, delay = NULL, loop = TRUE) {
+loopviz <- function(..., animate = FALSE, delay = NULL, loop = TRUE,
+                    translate = FALSE) {
   i <- list(...)
   x <- initialize_params(i)
+
+  if (translate) translate_loop(unlist(i))
 
   if (animate) {
     if (is.null(delay)) {
