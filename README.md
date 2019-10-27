@@ -53,3 +53,12 @@ loopviz(2, 3, translate = TRUE)
 #>     print (j)
 #> }
 ```
+
+Animating loops is also possible thanks to
+[gifski](https://github.com/r-rust/gifski):
+
+``` r
+loopviz(2, 3, animate = TRUE)
+```
+
+<img src="man/figures/animation.gif" width="300px" style="display: block; margin: auto;" />
